@@ -1,0 +1,17 @@
+如果要直接添加到静态路径 
+放在public文件夹内
+
+挂载地址到httpd的静态文件地址
+docker run -dit   -p 8083:80 -v /usr/local/httpd/:/usr/local/apache2/htdocs/ httpd:2.4
+
+
+
+运行Dockerfile 
+docker build -t local-httpd:latest .
+docker run -d -p 8083:80 local-httpd:latest /bin/bash -c /usr/local/bin/start.sh
+
+docker run -d -p8080:80 local-httpd10:v1
+
+或者
+
+docker run -d -p 8083:80 local-httpd5:v1 bash -c /usr/local/bin/httpd-foreground
